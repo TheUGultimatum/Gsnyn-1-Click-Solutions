@@ -14,13 +14,13 @@ PATCHED_KEYS=(
 for yaml_file in "$CONFIG_DIR"/grp*.yaml; do
   echo "📁 Processing $(basename "$yaml_file")..."
 
-  # Replace or append each key
-  for key in "${PATCHED_KEYS[@]}"; do
-    key_name=$(echo "$key" | cut -d: -f1)
+  for entry in "${PATCHED_KEYS[@]}"; do
+    key_name="${entry%%:*}"
+    key_name="$(echo "$key_name" | xargs)"  # trim whitespace
     if grep -q "^$key_name:" "$yaml_file"; then
-      sed -i "s|^$key_name:.*|$key|" "$yaml_file"
+      sed -i "s|^$key_name:.*|$entry|" "$yaml_file"
     else
-      echo "$key" >> "$yaml_file"
+      echo "$entry" >> "$yaml_file"
     fi
   done
 
