@@ -1,5 +1,24 @@
 #!/bin/bash
 
+
+echo ' 
+
+████████╗██╗  ██╗███████╗██╗   ██╗ ██████╗ 
+╚══██╔══╝██║  ██║██╔════╝██║   ██║██╔════╝ 
+   ██║   ███████║█████╗  ██║   ██║██║  ███╗
+   ██║   ██╔══██║██╔══╝  ██║   ██║██║   ██║
+   ██║   ██║  ██║███████╗╚██████╔╝╚██████╔╝
+   ╚═╝   ╚═╝  ╚═╝╚══════╝ ╚═════╝  ╚═════╝ 
+                                           
+  
+                               
+         By: The UG ULTIMATUM           
+'
+
+
+
+
+
 echo "🔧 Fixing batch size and training settings in grp*.yaml..."
 
 CONFIG_DIR="$HOME/rl-swarm/hivemind_exp/configs/mac"
